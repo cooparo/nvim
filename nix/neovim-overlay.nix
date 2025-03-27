@@ -45,6 +45,10 @@ let
     cmp-cmdline # cmp command line suggestions
     cmp-cmdline-history # cmp command line history suggestions
     # ^ nvim-cmp extensions
+    # file management
+    neo-tree-nvim
+    oil-nvim
+    # ^ file management
     # git integration plugins
     lazygit-nvim
     gitsigns-nvim # https://github.com/lewis6991/gitsigns.nvim/

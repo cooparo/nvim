@@ -211,4 +211,12 @@ keymap.set('n', '<leader>gg', '<cmd>LazyGit<CR>', { silent = true, desc = 'Open 
 keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", { silent = true, desc = 'Cycle buffers' })
 keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", { silent = true, desc = 'Cycle reverse buffers' })
 
+-- Buffer
 keymap.set('n', '<leader>bd', '<cmd>bd<CR>', { silent = true, desc = 'Open LazyGit' })
+
+-- Neo-tree
+keymap.set('n', '<leader>e', "<cmd>Neotree position=left reveal toggle<CR>", { silent = true, desc = 'Toggle neo-tree' })
+keymap.set('n', '<leader>o', "<cmd>Neotree position=left focus<CR>", { silent = true, desc = 'Focus neo-tree' })
+
+-- Oil
+vim.keymap.set("n", "-", "<cmd>Oil --float<CR>", { silent = true, desc = "Open parent directory" })
