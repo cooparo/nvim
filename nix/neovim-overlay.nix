@@ -104,6 +104,7 @@ let
     ripgrep
     xclip
     git
+    lazygit
   ];
 in
 {
