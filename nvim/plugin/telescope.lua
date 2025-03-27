@@ -1,3 +1,4 @@
+-- TODO: UI orizontal split to vertical split
 if vim.g.did_load_telescope_plugin then
 	return
 end
@@ -87,7 +88,7 @@ vim.keymap.set('n', '<leader>fz', fuzzy_grep, { desc = 'Telescope fuzzy grep' })
 vim.keymap.set('n', '<leader>*', builtin.grep_string, { desc = 'Telescope grep current string [*]' })
 -- vim.keymap.set('n', '<leader>tg', project_files, { desc = 'Telescope project files [g]' })
 vim.keymap.set('n', '<leader>tc', builtin.quickfix, { desc = '[t]elescope quickfix list [c]' })
-vim.keymap.set('n', '<leader>tq', builtin.command_history, { desc = '[t]elescope command history [q]' })
+-- vim.keymap.set('n', '<leader>tq', builtin.command_history, { desc = '[t]elescope command history [q]' })
 vim.keymap.set('n', '<leader>tl', builtin.loclist, { desc = '[t]elescope [l]oclist' })
 vim.keymap.set('n', '<leader>tr', builtin.registers, { desc = '[t]elescope [r]egisters' })
 vim.keymap.set('n', '<leader>tbb', builtin.buffers, { desc = '[t]elescope [b]uffers [b]' })
