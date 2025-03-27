@@ -94,6 +94,7 @@ let
     nil # nix LSP
     fzf
     ripgrep
+    xclip
   ];
 in
 {
