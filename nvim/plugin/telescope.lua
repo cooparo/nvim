@@ -69,12 +69,11 @@ local function fuzzy_grep_current_file_type()
   grep_current_file_type(fuzzy_grep)
 end
 
-vim.keymap.set('n', '<leader><leader>', function()
-  builtin.find_files()
-end, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader><leader>', builtin.find_files(), { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = 'Telescope old files' })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fz', fuzzy_grep, { desc = 'Telescope fuzzy grep' })
+vim.keymap.set('n', '<leader>tt', '<cmd>TodoTelescope keywords=TODO,FIX<cr>', { desc = 'Telescope fuzzy grep' })
 -- # TODO: assign keymap
 -- vim.keymap.set('n', '<leader>f', fuzzy_grep_current_file_type, { desc = 'Telescope fuzzy grep filetype' })
 -- vim.keymap.set('n', '<leader>f', live_grep_current_file_type, { desc = 'Telescope live grep filetype' })
