@@ -70,6 +70,8 @@ let
     indent-blankline-nvim
     # ^ UI
     # language support
+    nvim-lspconfig
+    lsp-format-nvim
     # ^ language support
     # navigation/editing enhancement plugins
     vim-unimpaired # predefined ] and [ navigation keymaps | https://github.com/tpope/vim-unimpaired/
