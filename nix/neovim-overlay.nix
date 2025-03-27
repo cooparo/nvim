@@ -64,6 +64,7 @@ let
     nvim-treesitter-context # nvim-treesitter-context
     bufferline-nvim
     alpha-nvim
+    base16-nvim
     # ^ UI
     # language support
     # ^ language support
