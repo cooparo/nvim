@@ -103,6 +103,7 @@ let
     fzf
     ripgrep
     xclip
+    git
   ];
 in
 {
