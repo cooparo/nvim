@@ -43,7 +43,7 @@ configs.setup {
       },
       selection_modes = {
         ['@parameter.outer'] = 'v', -- charwise
-        ['@function.outer'] = 'V', -- linewise
+        ['@function.outer'] = 'V',  -- linewise
         ['@class.outer'] = '<c-v>', -- blockwise
       },
     },
@@ -82,6 +82,17 @@ configs.setup {
         ['df'] = '@function.outer',
         ['dF'] = '@class.outer',
       },
+    },
+  },
+
+  incremental_selection = {
+    enable = true,
+
+    keymaps = {
+      init_selection = "<C-space>", -- set to `false` to disable one of the mappings
+      node_incremental = "<C-space>",
+      node_decremental = "<bs>",
+      scope_incremental = false,
     },
   },
 }
