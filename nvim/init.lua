@@ -27,7 +27,7 @@ opt.showmatch = true -- Highlight matching parentheses, etc
 opt.incsearch = true
 opt.hlsearch = false
 
-opt.spell = true
+opt.spell = false
 opt.spelllang = 'en,it'
 
 opt.expandtab = true
