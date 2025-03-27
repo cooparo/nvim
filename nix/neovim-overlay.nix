@@ -99,7 +99,8 @@ let
   extraPackages = with pkgs; [
     # language servers, etc.
     lua-language-server
-    nil # nix LSP
+    nixd
+    nixfmt-rfc-style
     fzf
     ripgrep
     xclip
