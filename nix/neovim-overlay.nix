@@ -65,6 +65,9 @@ let
     bufferline-nvim
     alpha-nvim
     base16-nvim
+    fidget-nvim
+    satellite-nvim
+    indent-blankline-nvim
     # ^ UI
     # language support
     # ^ language support

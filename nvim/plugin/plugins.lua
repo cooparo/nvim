@@ -8,4 +8,6 @@ vim.g.did_load_plugins_plugin = true
 
 require('nvim-surround').setup()
 require('todo-comments').setup()
-require('todo-comments').setup()
+require('fidget').setup()
+require('satellite').setup()
+require('ibl').setup()
