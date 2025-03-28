@@ -11,7 +11,7 @@ local diagnostic = vim.diagnostic
 keymap.set("i", "jk", "<Esc>", { silent = true, desc = "Exit insert mode" })
 keymap.set("n", "<leader>w", "<cmd>w<CR>", { silent = true, desc = "Write file" })
 keymap.set("n", "<leader>q", "<cmd>q!<CR>", { silent = true, desc = "Quit file" })
--- Move visual block FIXME: doesn't work as expected
+-- Move visual block
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true, desc = "Move visual block up" })
 keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true, desc = "Move visual block down" })
 -- Center cursor
