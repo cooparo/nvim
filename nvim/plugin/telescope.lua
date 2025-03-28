@@ -90,6 +90,7 @@ vim.keymap.set('n', '<leader>tc', builtin.quickfix, { desc = '[t]elescope quickf
 vim.keymap.set('n', '<leader>tl', builtin.loclist, { desc = '[t]elescope [l]oclist' })
 vim.keymap.set('n', '<leader>tr', builtin.registers, { desc = '[t]elescope [r]egisters' })
 vim.keymap.set('n', '<leader>tbb', builtin.buffers, { desc = '[t]elescope [b]uffers [b]' })
+vim.keymap.set('n', '<leader>ht', builtin.help_tags, { desc = 'telescope [h]elp_[t]ags' })
 -- vim.keymap.set(
 -- 	'n',
 -- 	'<leader>tbf',
