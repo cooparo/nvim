@@ -107,3 +107,18 @@ cmd.highlight("TSConstant gui=bold") -- Bold font for constant vars
 
 -- let sqlite.lua (which some plugins depend on) know where to find sqlite
 vim.g.sqlite_clib_path = require('luv').os_getenv('LIBSQLITE')
+
+-- Debugging functions
+P = function(v) -- Pretty print tables values
+  print(vim.inspect(v))
+  return v
+end
+
+RELOAD = function(...) -- Reload modules
+  return require('plenary.reload').reload_module(...)
+end
+
+R = function(name) -- Reload and require module
+  RELOAD(name)
+  return require(name)
+end
