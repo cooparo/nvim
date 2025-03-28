@@ -22,10 +22,18 @@ local function get_username()
   return nil
 end
 
+local root_files = {
+  'flake.nix',
+  'default.nix',
+  'shell.nix',
+  '.git',
+}
+
 -- LSP configuration
 require('lspconfig').nixd.setup {
   capabilities = require('user.lsp').make_client_capabilities(),
   on_attach = require('lsp-format').on_attach,
+  root_dir = vim.fs.dirname(vim.fs.find(root_files, { upward = true })[1]),
   cmd = { "nixd" },
   settings = {
     nixd = {
