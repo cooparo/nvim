@@ -1,27 +1,18 @@
--- Exit if the language server isn't available
-if vim.fn.executable('nixd') ~= 1 then
-  return
-end
-
-local root_files = {
-  'flake.nix',
-  'default.nix',
-  'shell.nix',
-  '.git',
-}
-
-local flake = os.getenv('FLAKE')
-function get_hostname()
+-- Utility
+local flake = os.getenv('FLAKE') -- The FLAKE env var is passed by my NixOS conf
+-- Retrieve the hostname  using `hostname` command
+local function get_hostname()
   local f = io.popen("hostname")  -- Runs the hostname command
   if f then
     local hostname = f:read("*l") -- Reads the first line of output
     f:close()
     return hostname
   end
-  return nil -- Return nil if the command fails
+  return nil
 end
 
-function get_username()
+-- Retrieve the user name  using `whoami` command
+local function get_username()
   local f = io.popen("whoami")    -- Works on Linux, macOS, and Windows (cmd)
   if f then
     local username = f:read("*l") -- Read the output
@@ -31,9 +22,10 @@ function get_username()
   return nil
 end
 
-require('lspconfig').nixd.setup({
-  root_dir = vim.fs.dirname(vim.fs.find(root_files, { upward = true })[1]),
+-- LSP configuration
+require('lspconfig').nixd.setup {
   capabilities = require('user.lsp').make_client_capabilities(),
+  on_attach = require('lsp-format').on_attach,
   cmd = { "nixd" },
   settings = {
     nixd = {
@@ -53,4 +45,4 @@ require('lspconfig').nixd.setup({
       },
     },
   },
-})
+}
