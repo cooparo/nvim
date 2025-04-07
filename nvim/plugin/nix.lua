@@ -29,28 +29,35 @@ local root_files = {
   '.git',
 }
 
+-- Base nixd settings
+local nixd_settings = {
+  nixd = {
+    nixpkgs = {
+      expr = "import <nixpkgs> { }",
+    },
+    formatting = {
+      command = { 'nixfmt' },
+    },
+  },
+}
+
+-- Disable 'options' for non-nixOS environment
+if flake and flake ~= '' then
+  nixd_settings.nixd.options = {
+    nixos = {
+      expr = '(builtins.getFlake "' .. flake .. '").nixosConfigurations.' .. get_hostname() .. '.options',
+    },
+    home_manager = {
+      expr = '(builtins.getFlake "' .. flake .. '").homeConfigurations.' .. get_username() .. '.options',
+    },
+  }
+end
+
 -- LSP configuration
 require('lspconfig').nixd.setup {
   capabilities = require('user.lsp').make_client_capabilities(),
   on_attach = require('lsp-format').on_attach,
   root_dir = vim.fs.dirname(vim.fs.find(root_files, { upward = true })[1]),
   cmd = { "nixd" },
-  settings = {
-    nixd = {
-      nixpkgs = {
-        expr = "import <nixpkgs> { }",
-      },
-      formatting = {
-        command = { 'nixfmt' },
-      },
-      options = {
-        nixos = {
-          expr = '(builtins.getFlake "' .. flake .. '").nixosConfigurations.' .. get_hostname() .. '.options',
-        },
-        home_manager = {
-          expr = '(builtins.getFlake "' .. flake .. '").homeConfigurations.' .. get_username() .. '.options',
-        },
-      },
-    },
-  },
+  settings = nixd_settings,
 }

@@ -101,6 +101,7 @@ let
     lua-language-server
     nixd
     nixfmt-rfc-style
+
     fzf
     ripgrep
     xclip
